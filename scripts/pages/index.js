@@ -1,5 +1,4 @@
 
-
 async function getPhotographers() {
         // Ceci est un exemple de données pour avoir un affichage de photographes de test dès le démarrage du projet, 
         // mais il sera à remplacer avec une requête sur le fichier JSON en utilisant "fetch".
@@ -21,7 +20,7 @@ async function getPhotographers() {
 
         photographers.forEach((photographer) => {
             const photographerModel = photographerTemplate(photographer);
-            const userCardDOM = photographerModel.getUserCardDOM();
+            const userCardDOM = photographerModel.getUserCardDOM(photographer);
             photographersSection.appendChild(userCardDOM);
         });
     }
@@ -30,7 +29,23 @@ async function getPhotographers() {
         // Récupère les datas des photographes
         const { photographers } = await getPhotographers();
         displayData(photographers);
+        addKeyDownNavigation(photographersSection);
+
     }
+
+    function addKeyDownNavigation(photographersSection) {
+        photographersSection.addEventListener("keydown", (event) => {
+          if (event.key === "Enter") {
+            const img = event.target.querySelector("img");
+            if (img) {
+              const link = img.closest("a");
+              if (link) {
+                link.click();
+              }
+            }
+          }
+        });
+      }
     
     init();
     
