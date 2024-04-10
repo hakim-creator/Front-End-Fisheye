@@ -1,7 +1,7 @@
 import Image from '../models/Image.js'
 import Video from '../models/Video.js'
 
-//  créer et de renvoyer une nouvelle instance de la classe Image ou Video en fonction des données fournies.
+//  crée et renvoi une nouvelle instance de la classe Image ou Video en fonction des données fournies.
 
 export default class MediasFactory {
     constructor(data) {

@@ -11,6 +11,8 @@ export const displayLightbox = medias => {
     const mediasList = medias.medias;
     let currentIndex = 0; 
 
+    //permet à l'utilisateur de cliquer sur un élément de média pour ouvrir ce média dans une lightbox.
+    
     mediaProvider.forEach(media => {
         media.addEventListener('click', () => {
             const mediaId = media.dataset.media;
@@ -27,8 +29,8 @@ export const displayLightbox = medias => {
         
         lightboxMedia.innerHTML = `
             ${currentMedia.image ? `
-            <img src="./assets/images/${photographer.name}/${currentMedia.image}" alt="${currentMedia.alt}">` : 
-            `<video controls aria-label="${currentMedia.alt}"><source src="./assets/images/${photographer.name}/${currentMedia.video}" type="video/mp4"></video>`}
+            <img src="./assets/images/${photographer.name}/${currentMedia.image}" alt="${currentMedia.title}">` : 
+            `<video controls aria-label="${currentMedia.title}"><source src="./assets/images/${photographer.name}/${currentMedia.video}" type="video/mp4"></video>`}
 
             <figcaption>${currentMedia.title}</figcaption>
         `;
@@ -57,7 +59,9 @@ export const displayLightbox = medias => {
         btn.classList.add('active');
         setTimeout(() => btn.classList.remove('active'), 100);
     };        
-        
+    
+    //permet à l'utilisateur de contrôler la lightbox en utilisant le clavier.
+    
     document.addEventListener('keyup', e => {
         switch(e.key) {
             case 'Escape':
