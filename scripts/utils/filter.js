@@ -1,6 +1,9 @@
 import { displayTotalLikes } from "../utils/likes.js";
 import { displayLightbox } from "../utils/lightbox.js";
 
+//une fonction qui gère l'ouverture et la fermeture du menu de filtre, 
+// y compris la mise à jour des attributs appropriés pour l'accessibilité.
+
 export const openCloseFilterMenu = () => {
     const filterMenu = document.querySelector(".dropdown_content");
     const filterMenuButton = document.querySelector(".btn_drop");
@@ -19,6 +22,8 @@ export const openCloseFilterMenu = () => {
         filterButtons.forEach(button => button.setAttribute("tabindex", newTabIndexValue));
     });
 };
+
+//une fonction qui permet à l'utilisateur de trier et d'afficher les médias d'un photographe en fonction du filtre sélectionné.
 
 export const displayMediaWithFilter = mediasTemplate => {
     const currentFilter = document.querySelector('#current_filter');
