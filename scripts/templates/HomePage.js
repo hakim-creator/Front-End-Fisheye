@@ -1,3 +1,6 @@
+
+//créer une carte de photographe pour afficher sur la page d'accueil.
+
 export default class PhotographerCard {
     constructor(photographer){
         this.photographer = photographer;

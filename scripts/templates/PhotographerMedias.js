@@ -1,3 +1,6 @@
+
+//crée et d'affiche les médias (images et vidéos) associés à un photographe spécifique sur sa page de profil.
+
 export default class PhotographerMedias {
     constructor(photographer, medias) {
         this.photographer = photographer;

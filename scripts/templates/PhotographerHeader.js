@@ -1,3 +1,6 @@
+
+//crée et affiche l'en-tête du profil d'un photographe sur une page.
+
 export default class PhotographerHeader {
     constructor(photographer) {
         this.photographer = photographer;
