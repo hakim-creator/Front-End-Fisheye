@@ -34,7 +34,8 @@ export const validateForm = () => {
         };
     });
 
-    const checkInputValidity = (input, regex) => {
+    //vérifie la validité d'une entrée utilisateur dans un champ de formulaire.
+    const InputValidity = (input, regex) => {
         const errorMessage = input.dataset.error;
         const messageProvider = input.nextElementSibling;
         const isValid = regex.test(input.value);
@@ -58,9 +59,9 @@ export const validateForm = () => {
         const regexEmail = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
         const regexMessage = /^[A-Za-z0-9|\s]{20,200}$/;
 
-        checkInputValidity(firstName, regexName);
-        checkInputValidity(lastName, regexName);
-        checkInputValidity(email, regexEmail);
-        checkInputValidity(message, regexMessage);
+        InputValidity(firstName, regexName);
+        InputValidity(lastName, regexName);
+        InputValidity(email, regexEmail);
+        InputValidity(message, regexMessage);
     };
 };

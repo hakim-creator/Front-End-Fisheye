@@ -48,6 +48,8 @@ main{
     opacity: 0;
     transform: translateY(-150px);
     animation: fadeIn .3s ease-in-out forwards;
+    overflow-y: auto;
+    max-height: 100vh;
 }
 
 .modal_form_title{

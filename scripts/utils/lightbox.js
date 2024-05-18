@@ -60,7 +60,7 @@ export const displayLightbox = medias => {
         setTimeout(() => btn.classList.remove('active'), 100);
     };        
     
-    //permet à l'utilisateur de contrôler la lightbox en utilisant le clavier.
+    //permet à l'utilisateur de contrôler la lightbox en utilisant le clavier avec KeyboardEvent.
     
     document.addEventListener('keyup', e => {
         switch(e.key) {

@@ -44,10 +44,7 @@
     background-color: var(--color-secondary);
     transition: width .2s ease-in-out;
 }
-/*
-article a:hover .photographer_name::before{
-    width: 80%;
-}*/
+
 
 article a:focus:not(:hover){
     outline: 2px solid var(--color-secondary)

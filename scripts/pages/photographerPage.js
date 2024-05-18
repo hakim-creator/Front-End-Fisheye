@@ -29,7 +29,7 @@ export const getPhotographerById = async () => {
 //afficher la page de profil d'un photographe spécifique.
 //récupère les informations d'un photographe et de ses médias associés, crée et affiche l'en-tête et les médias du photographe,
 
-const displayProfilePage = async () => {
+const displayProfile = async () => {
     const { photographer, medias } = await getPhotographerById();
     const headerTemplate = new PhotographerHeader(photographer);
     headerTemplate.createPhotographerHeader();
@@ -44,4 +44,4 @@ const displayProfilePage = async () => {
     displayLightbox(mediasTemplate);
 };
 
-displayProfilePage();
+displayProfile();
