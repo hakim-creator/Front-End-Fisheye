@@ -19,7 +19,7 @@ export default class PhotographerMedias {
                     </video>`;
             return `
                     <article class="gallery_card">                           
-                        <a href="#" data-media=${media.id} role="link" aria-label="View media large">
+                        <a href="#" data-media=${media.id} role="link" aria-label="image closeup view">
                             <figure>${mediaContent}</figure>
                         </a>
                         <figcaption>
