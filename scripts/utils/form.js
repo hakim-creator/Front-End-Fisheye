@@ -7,6 +7,35 @@ export const openCloseFormContact = () => {
         closeModal.focus();
     });
     closeModal.addEventListener("click", () => contactModal.style.display = "none");
+    // Sélectionnez le premier et le dernier élément interactif de la modale
+let firstInteractiveElement = document.querySelector('.modal_form .btn_close');
+let lastInteractiveElement = document.querySelector('.modal_form .btn_submit');
+
+// Ajoutez un écouteur d'événements keydown à la modale
+document.querySelector('.modal_form').addEventListener('keydown', function(e) {
+  // Vérifiez si la touche Tab est pressée
+  if (e.key === 'Tab') {
+    // Si l'utilisateur est sur le dernier élément interactif et appuie sur Tab
+    if (document.activeElement === lastInteractiveElement && !e.shiftKey) {
+      // Empêchez le comportement par défaut (tabulation vers le prochain élément de la page)
+      e.preventDefault();
+      // Redirigez le focus vers le premier élément interactif de la modale
+      firstInteractiveElement.focus();
+    }
+    // Si l'utilisateur est sur le premier élément interactif et appuie sur Maj+Tab
+    else if (document.activeElement === firstInteractiveElement && e.shiftKey) {
+      // Empêchez le comportement par défaut (tabulation vers l'élément précédent de la page)
+      e.preventDefault();
+      // Redirigez le focus vers le dernier élément interactif de la modale
+      lastInteractiveElement.focus();
+    }
+  }
+    // Vérifiez si la touche Échap est pressée
+    if (e.key === 'Escape') {
+        // Cachez la modale
+        contactModal.style.display = "none";
+      }
+});
 };
 
 export const validateForm = () => {
